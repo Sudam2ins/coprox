@@ -554,11 +554,14 @@ label{
 .section{
 	padding: 135px 0;
 	@media (max-width: 992px) {
-		padding: 30px 0;
+		padding: 50px 0;
 	}
 }
 .header{
 	padding:20px 0 12px; 
+	@media (max-width: 767px){
+		padding: 10px 0;
+	}
 	.logo{
 		img{
 			@media (max-width: 767px) {
@@ -580,7 +583,6 @@ label{
 	}
 }
 .body-inactive{
-	
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -589,7 +591,11 @@ label{
 	background-color: rgba(0,0,0,.5);
 	display: none;
 	z-index: 8;
-	
+}
+@media (min-width: 767px) {
+	.body-inactive{
+		display: none !important;
+	}
 }
 .banner{
 	position: relative;
@@ -610,7 +616,7 @@ label{
 				right: 0;
 				bottom: 0;
 				width: 250px;
-				background-color: $theme-003c7c;
+				background-color:rgba(0,60,124,.95);
 				z-index: 9;
 				@include transition(all,0.5s,ease-out);
 				@include translate(100%,0);
@@ -630,9 +636,10 @@ label{
 			ul{
 				@media (max-width: 767px) {
 					display: block;
+					margin-top: 60px;
 				}
 				li{
-					margin-left: 20px;
+					margin-left: 30px;
 					@media (max-width: 767px) {
 						float: none;
 						margin-left: 10px;
@@ -644,27 +651,59 @@ label{
 						@media (max-width: 992px) {
 							font-size: 15px;
 						}
-						&:last-child{
+					}
+					&:last-child{
+						a{
 							padding-right: 0;
 						}
 					}
-				}
-				&:last-child{
-					margin-left: 0;
+
+					&:active,
+					&:hover{
+						@include transition(all,0.35s,ease-out);
+						position: relative;
+						outline: 1;
+						&:after{
+							position: absolute;
+							content: '';
+							height: 1px;
+							width: 40px;
+							@include translate(-50%,-50%);
+							bottom: 0;
+							left:50%;
+							background-color: $theme-ffffff;
+							margin: 0 auto;
+							@media (max-width: 767px) {
+								display: none;
+							}
+						}
+					}
 				}
 			}
+
 		}
 		.close-menu{
 			display: none;
-			padding: 10px;
+			padding:5px 10px 10px;
 			background-color: rgba(0,0,0,0.32);
 			@media (max-width: 767px){
 				display: inline-block;
 				margin-bottom: 20px;
-				margin-left: 10px;
 				z-index: 4;
-				//padding: 10px;
-				
+				position: absolute;
+				top: 0;
+			}
+		}
+		.top-info-cta{
+			margin-left: 20px;
+			margin-top: 40px;
+			.action-btn{
+				//background-color: $theme-f5f5f5;
+				//color: $theme-003c7c;
+				padding: 10px 20px;
+				//font-family:'din-bold';
+				border:1px solid $theme-f5f5f5;
+
 			}
 		}
 	}
@@ -822,6 +861,8 @@ label{
 			line-height: 2;
 			@media (max-width: 992px) {
 				font-size: 24px;
+				line-height: 1.5;
+				margin-bottom: 50px;
 			}
 			@media (max-width: 767px) {
 				font-size: 22px;
@@ -831,9 +872,11 @@ label{
 }
 .mid-page-banner{
 	height: 100vh;
-	background-attachment: fixed;
+	background-attachment:fixed;
 	position: relative;
-	//margin:70px 0;
+	@media (max-width: 767px){
+		margin: 35px 0;
+	}
 	.mpb-note{
 		position: absolute;
 		max-width: 540px;
@@ -1016,6 +1059,9 @@ footer{
 		}
 		.fc-logo{
 			margin-bottom: 50px;
+			@media (max-width: 767px){
+				margin-bottom: 30px;
+			}
 		}
 		.fc-link{
 			color: #000000;
@@ -1029,6 +1075,7 @@ footer{
 					margin-right: 15px;
 					@media (max-width: 767px){
 						display: block;
+						margin-top: 5px;
 					}
 				}
 			}
@@ -1041,7 +1088,9 @@ footer{
 						margin-right: 15px;
 						@media (max-width: 767px){
 							float: none;
+							margin-top: 5px;
 						}
+
 					}
 				}
 			}

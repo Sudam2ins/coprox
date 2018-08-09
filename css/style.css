@@ -500,10 +500,13 @@ label {
   padding: 135px 0; }
   @media (max-width: 992px) {
     .section {
-      padding: 30px 0; } }
+      padding: 50px 0; } }
 
 .header {
   padding: 20px 0 12px; }
+  @media (max-width: 767px) {
+    .header {
+      padding: 10px 0; } }
   @media (max-width: 767px) {
     .header .logo img {
       max-width: 100px; } }
@@ -526,6 +529,9 @@ label {
   display: none;
   z-index: 8; }
 
+@media (min-width: 767px) {
+  .body-inactive {
+    display: none !important; } }
 .banner {
   position: relative; }
   .banner .menu {
@@ -546,7 +552,7 @@ label {
           right: 0;
           bottom: 0;
           width: 250px;
-          background-color: #003c7c;
+          background-color: rgba(0, 60, 124, 0.95);
           z-index: 9;
           -webkit-transition: all 0.5s ease-out;
           -o-transition: all 0.5s ease-out;
@@ -572,9 +578,10 @@ label {
 
       @media (max-width: 767px) {
         .banner .menu .mynav ul {
-          display: block; } }
+          display: block;
+          margin-top: 60px; } }
       .banner .menu .mynav ul li {
-        margin-left: 20px; }
+        margin-left: 30px; }
         @media (max-width: 767px) {
           .banner .menu .mynav ul li {
             float: none;
@@ -585,20 +592,47 @@ label {
           @media (max-width: 992px) {
             .banner .menu .mynav ul li a {
               font-size: 15px; } }
-          .banner .menu .mynav ul li a:last-child {
-            padding-right: 0; }
-      .banner .menu .mynav ul:last-child {
-        margin-left: 0; }
+        .banner .menu .mynav ul li:last-child a {
+          padding-right: 0; }
+        .banner .menu .mynav ul li:active, .banner .menu .mynav ul li:hover {
+          -webkit-transition: all 0.35s ease-out;
+          -o-transition: all 0.35s ease-out;
+          transition: all 0.35s ease-out;
+          position: relative;
+          outline: 1; }
+          .banner .menu .mynav ul li:active:after, .banner .menu .mynav ul li:hover:after {
+            position: absolute;
+            content: '';
+            height: 1px;
+            width: 40px;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            bottom: 0;
+            left: 50%;
+            background-color: #ffffff;
+            margin: 0 auto; }
+            @media (max-width: 767px) {
+              .banner .menu .mynav ul li:active:after, .banner .menu .mynav ul li:hover:after {
+                display: none; } }
     .banner .menu .close-menu {
       display: none;
-      padding: 10px;
+      padding: 5px 10px 10px;
       background-color: rgba(0, 0, 0, 0.32); }
       @media (max-width: 767px) {
         .banner .menu .close-menu {
           display: inline-block;
           margin-bottom: 20px;
-          margin-left: 10px;
-          z-index: 4; } }
+          z-index: 4;
+          position: absolute;
+          top: 0; } }
+    .banner .menu .top-info-cta {
+      margin-left: 20px;
+      margin-top: 40px; }
+      .banner .menu .top-info-cta .action-btn {
+        padding: 10px 20px;
+        border: 1px solid #f5f5f5; }
   .banner .carousel .carousel-indicators li {
     background-color: #ffffff;
     border: 0 !important;
@@ -707,7 +741,9 @@ label {
       line-height: 2; }
       @media (max-width: 992px) {
         .tittle-para-cta-row .tpcrc-para p {
-          font-size: 24px; } }
+          font-size: 24px;
+          line-height: 1.5;
+          margin-bottom: 50px; } }
       @media (max-width: 767px) {
         .tittle-para-cta-row .tpcrc-para p {
           font-size: 22px; } }
@@ -716,6 +752,9 @@ label {
   height: 100vh;
   background-attachment: fixed;
   position: relative; }
+  @media (max-width: 767px) {
+    .mid-page-banner {
+      margin: 35px 0; } }
   .mid-page-banner .mpb-note {
     position: absolute;
     max-width: 540px;
@@ -842,6 +881,9 @@ footer {
         max-width: 100%; } }
     footer .footer-contain .fc-logo {
       margin-bottom: 50px; }
+      @media (max-width: 767px) {
+        footer .footer-contain .fc-logo {
+          margin-bottom: 30px; } }
     footer .footer-contain .fc-link {
       color: #000000;
       font-size: 12px; }
@@ -853,7 +895,8 @@ footer {
           margin-right: 15px; }
           @media (max-width: 767px) {
             footer .footer-contain .fc-link .fcl-name span {
-              display: block; } }
+              display: block;
+              margin-top: 5px; } }
       footer .footer-contain .fc-link .main-link {
         display: table;
         margin: 0 auto; }
@@ -862,7 +905,8 @@ footer {
           margin-right: 15px; }
           @media (max-width: 767px) {
             footer .footer-contain .fc-link .main-link ul li {
-              float: none; } }
+              float: none;
+              margin-top: 5px; } }
 
 .carousel-fade .carousel-inner .item {
   transition-property: opacity; }
