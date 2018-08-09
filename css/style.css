@@ -647,6 +647,9 @@ label {
     @media (max-width: 992px) {
       .banner .carousel .item {
         height: 500px; } }
+    @media (max-width: 767px) {
+      .banner .carousel .item {
+        height: calc(100vh - 45px); } }
     .banner .carousel .item .carousel-caption {
       bottom: 45%;
       padding: 0; }

@@ -698,12 +698,9 @@ label{
 			margin-left: 20px;
 			margin-top: 40px;
 			.action-btn{
-				//background-color: $theme-f5f5f5;
-				//color: $theme-003c7c;
+				
 				padding: 10px 20px;
-				//font-family:'din-bold';
 				border:1px solid $theme-f5f5f5;
-
 			}
 		}
 	}
@@ -724,7 +721,10 @@ label{
 		.item{
 			height: 830px;
 			@media (max-width: 992px) {
-				height: 500px;
+				height:500px;
+			}
+			@media (max-width: 767px) {
+				height:calc(100vh - 45px)
 			}
 			.carousel-caption{
 				bottom: 45%;
